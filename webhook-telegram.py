@@ -13,12 +13,14 @@ app = Flask(__name__)
 @app.route('/'+secret,methods= ['POST'])
 def webhook():
     update = telebot.types.Update.de_json(request.stream.read().decode('utf-8'))
+    print("aaa")
     bot.process_new_updates([update])
     return 'ok', 200
 
 
 @bot.message_handler(commands=['start'])
 def start(m):
+    print("bb")
     bot.send_message(m.chat.id, "Hello, welcome to test bot!")
 
 @bot.message_handler(commands=['help'])
@@ -28,7 +30,7 @@ def help(m):
     
 @bot.message_handler(content_types=['text'])
 def echo(m):
-    bot.send_message(m.chat.id, m. text)
+    bot.send_message(m.chat.id, m.text)
     
 @bot.message_handler(content_types=['photo'])
 def photo(m):
