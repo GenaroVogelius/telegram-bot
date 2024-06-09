@@ -3,7 +3,7 @@ from flask import Flask, request
 token ='6863061604:AAFa6R1qOjNjZxP6HUdUPjbcZaFRaW8Jo8o'
 secret='ioufbvewgr2492yf2gh'
 
-url = 'https://savasenok.pythonanywhere.com/* + secret'
+url = 'https://vps-3503468-x.dattaweb.com/ + secret'
 bot = telebot.TeleBot(token, threaded=False)
 bot.remove_webhook()
 bot.set_webhook(url=url)
